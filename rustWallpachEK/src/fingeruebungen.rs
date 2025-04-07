@@ -4,21 +4,11 @@ use std::io;
 pub fn run() {
     let mut numbers: Vec<i32> = Vec::new();
 
-    println!("Gib ein paar Zahlen ein (leere Zeile zum Beenden):");
+    numbers.push(2);
+    numbers.push(5);
+    numbers.push(8);
+    numbers.push(1);
 
-    loop {
-        let mut input = String::new();
-        io::stdin().read_line(&mut input).unwrap();
-        let input = input.trim();
-        if input.is_empty() {
-            break;
-        }
-        if let Ok(n) = input.parse::<i32>() {
-            numbers.push(n);
-        } else {
-            println!("Ungültige Zahl");
-        }
-    }
 
     println!("Eingegebene Zahlen:");
     for num in &numbers {
